@@ -1,0 +1,19 @@
+{
+  "name": "functions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@playwright/test": "^1.46.0",
+    "@types/node": "^22.2.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.5",
+    "dotenv": "^16.4.5"
+  }
+}
