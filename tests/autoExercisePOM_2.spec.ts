@@ -26,7 +26,7 @@ test("@KAN-6 TC01 - Register User", async ({homePage, loginPage, registerPage, u
 test("@KAN-1 TC02 - Login User with correct email and password", async ({homePage, loginPage, userData, goToTheLoginPage,}) => {
   goToTheLoginPage;
   await loginPage.userLogin(userData.correctEmail, userData.correctPassword);
-  await homePage.verifyLoggedInUsername('fode');
+  await homePage.verifyLoggedInUsername(userData.loginUsername);
   // await homePage.deleteAccount();
   // await homePage.verifyAccountIsDeleted();
 });

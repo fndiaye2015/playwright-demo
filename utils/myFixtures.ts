@@ -44,6 +44,7 @@ export const test = base.extend<myFixture>({
         correctPassword : process.env.VALIDPASSWORD,
         invalidEmail : process.env.INVALIDEMAIL,
         invalidPassword : process.env.INVALIDPASSWORD,
+        loginUsername : process.env.USERNAME,
     };
     await use(user);
   },
