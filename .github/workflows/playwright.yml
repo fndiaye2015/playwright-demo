@@ -28,9 +28,7 @@ jobs:
     
     # Génération du rapport Allure
     - name: Generate Allure Report
-      run: | 
-        npm run allure:generate
-        npm run allure:open
+      run: npm run allure:generate
     
     # Deploy report to GitHub Pages
     - name: Deploy Allure Report to GitHub Pages
