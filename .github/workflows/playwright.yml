@@ -29,7 +29,18 @@ jobs:
     # Génération du rapport Allure
     - name: Generate Allure Report
       run: npm run allure:generate
-  
+    
+    # Upload du rapport Allure compressé en tant qu'artefact
+    - name: Upload Allure Report as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: allure-report
+        path: allure-report.zip
+    
+    # Compresser le rapport Allure pour le télécharger
+    - name: Archive Allure Report
+      run: zip -r allure-report.zip allure-report
+      
   allure-report:
     needs: test
     runs-on: ubuntu-latest
@@ -40,15 +51,8 @@ jobs:
         name: allure-report
         path: allure-report
     
-     # Compresser le rapport Allure pour le télécharger
-    - name: Archive Allure Report
-      run: zip -r allure-report.zip allure-report
+     
 
-    # Upload du rapport Allure compressé en tant qu'artefact
-    - name: Upload Allure Report as artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: allure-report
-        path: allure-report.zip
+    
     
     
