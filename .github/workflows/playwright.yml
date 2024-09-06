@@ -13,12 +13,44 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
+
+    # Installation des dépendances
     - name: Install dependencies
       run: npm ci
+
+    # Installation des navigateurs
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps chromium
+
+    # Lancement des tests que sur chrome  
     - name: Run Playwright tests 
       run: npx playwright test tests/autoExercisePOM_2.spec.ts --project chromium
+    
+    # Génération du rapport Allure
+    - name: Generate Allure Report
+      run: npm run allure:generate
+    
+    # Publier le rapport Allure dans les artefacts GitHub Actions
+    - name: Upload Allure Report
+      uses: actions/upload-artifact@v2
+      with:
+        name: allure-report
+        path: allure-report
+  
+  allure-report:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download Allure Report
+      uses: actions/download-artifact@v2
+      with:
+        name: allure-report
+        path: allure-report
+
+    # Serveur HTTP pour afficher le rapport Allure
+    - name: Serve Allure Report
+      run: npx http-server allure-report -p 8080
+  
     - uses: actions/upload-artifact@v4
       if: always()
       with:
