@@ -50,7 +50,7 @@ jobs:
     # Serveur HTTP pour afficher le rapport Allure
     - name: Serve Allure Report
       run: |
-        npx http-server allure-report -p 8181 &
+        npx http-server allure-report -p 8080 &
         sleep 60 # Garde le serveur actif pendant 60 secondes
   
     - uses: actions/upload-artifact@v4
