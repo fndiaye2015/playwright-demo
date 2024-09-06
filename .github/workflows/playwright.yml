@@ -46,16 +46,30 @@ jobs:
       with:
         name: allure-report
         path: allure-report
+    
+     # Compresser le rapport Allure pour le télécharger
+    - name: Archive Allure Report
+      run: zip -r allure-report.zip allure-report
 
-    # Serveur HTTP pour afficher le rapport Allure
-    - name: Serve Allure Report
-      run: |
-        npm install -g live-server
-        live-server allure-report --port=8080
-  
-    - uses: actions/upload-artifact@v4
-      if: always()
+    # Upload du rapport Allure compressé en tant qu'artefact
+    - name: Upload Allure Report as artifact
+      uses: actions/upload-artifact@v2
       with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
+        name: allure-report
+        path: allure-report.zip
+    
+    # Installer ngrok
+    - name: Install ngrok
+      run: npm install -g ngrok
+
+    # Lancer le serveur HTTP et exposer via ngrok
+    - name: Serve Allure Report with ngrok
+      run: |
+        npx http-server allure-report -p 8080 &
+        ngrok http 8080
+    
+    # Afficher l'URL publique générée par ngrok
+    - name: Display ngrok URL
+      run: curl http://127.0.0.1:4040/api/tunnels
+  
+    
