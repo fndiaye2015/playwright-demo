@@ -37,6 +37,21 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./allure-report
     
+  notifications:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+
+    # Step 1: Send Slack notification
+    - name: Send Slack Notification
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        fields: repo,commit,author,action,eventName,ref,workflow,job,took
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+  
+    
 
     
     
