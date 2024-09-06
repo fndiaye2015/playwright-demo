@@ -24,6 +24,10 @@
         {
           "outputFile": "playwright-report.json"
         }
+      ],
+      [
+        "/Users/fndiaye/Documents/Playwright/functions/node_modules/allure-playwright/dist/cjs/index.js",
+        null
       ]
     ],
     "reportSlowTests": {
@@ -77,7 +81,7 @@
     ],
     "shard": null,
     "updateSnapshots": "missing",
-    "version": "1.46.0",
+    "version": "1.46.1",
     "workers": 4,
     "webServer": null
   },
@@ -89,9 +93,11 @@
       "line": 0,
       "specs": [
         {
-          "title": "TC02 - Login User with correct email and password",
-          "ok": true,
-          "tags": [],
+          "title": "@KAN-1 TC02 - Login User with correct email and password",
+          "ok": false,
+          "tags": [
+            "KAN-1"
+          ],
           "tests": [
             {
               "timeout": 30000,
@@ -102,26 +108,55 @@
               "results": [
                 {
                   "workerIndex": 0,
-                  "status": "passed",
-                  "duration": 8272,
-                  "errors": [],
+                  "status": "failed",
+                  "duration": 15244,
+                  "error": {
+                    "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText('fode')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('fode')\u001b[22m\n",
+                    "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText('fode')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('fode')\u001b[22m\n\n    at HomePage.verifyLoggedInUsername (/Users/fndiaye/Documents/Playwright/functions/pages/homePage.ts:36:45)\n    at /Users/fndiaye/Documents/Playwright/functions/tests/autoExercisePOM_2.spec.ts:29:18",
+                    "location": {
+                      "file": "/Users/fndiaye/Documents/Playwright/functions/pages/homePage.ts",
+                      "column": 45,
+                      "line": 36
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39m../pages/homePage.ts:36\n\n\u001b[0m \u001b[90m 34 |\u001b[39m\n \u001b[90m 35 |\u001b[39m   \u001b[36masync\u001b[39m verifyLoggedInUsername(name) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgetByText(name))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m   }\n \u001b[90m 38 |\u001b[39m\n \u001b[90m 39 |\u001b[39m   \u001b[36masync\u001b[39m loggOut() {\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/fndiaye/Documents/Playwright/functions/pages/homePage.ts",
+                        "column": 45,
+                        "line": 36
+                      },
+                      "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText('fode')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  \u001b[2m- expect.toBeVisible with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('fode')\u001b[22m\n\n\n\u001b[90m   at \u001b[39m../pages/homePage.ts:36\n\n\u001b[0m \u001b[90m 34 |\u001b[39m\n \u001b[90m 35 |\u001b[39m   \u001b[36masync\u001b[39m verifyLoggedInUsername(name) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m expect(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mgetByText(name))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m   }\n \u001b[90m 38 |\u001b[39m\n \u001b[90m 39 |\u001b[39m   \u001b[36masync\u001b[39m loggOut() {\u001b[0m\n\n\u001b[2m    at HomePage.verifyLoggedInUsername (/Users/fndiaye/Documents/Playwright/functions/pages/homePage.ts:36:45)\u001b[22m\n\u001b[2m    at /Users/fndiaye/Documents/Playwright/functions/tests/autoExercisePOM_2.spec.ts:29:18\u001b[22m"
+                    }
+                  ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-08-31T12:06:06.704Z",
+                  "startTime": "2024-08-31T17:47:36.010Z",
                   "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/fndiaye/Documents/Playwright/functions/test-results/autoExercisePOM_2--KAN-1-T-d4d80--correct-email-and-password-chromium/test-failed-1.png"
+                    },
                     {
                       "name": "trace",
                       "contentType": "application/zip",
-                      "path": "/Users/fndiaye/Documents/Playwright/functions/test-results/autoExercisePOM_2-TC02---L-9b172--correct-email-and-password-chromium/trace.zip"
+                      "path": "/Users/fndiaye/Documents/Playwright/functions/test-results/autoExercisePOM_2--KAN-1-T-d4d80--correct-email-and-password-chromium/trace.zip"
                     }
-                  ]
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/fndiaye/Documents/Playwright/functions/pages/homePage.ts",
+                    "column": 45,
+                    "line": 36
+                  }
                 }
               ],
-              "status": "expected"
+              "status": "unexpected"
             }
           ],
-          "id": "158a5b400f6de0a13993-4bc93b47713ecd6cf1f0",
+          "id": "158a5b400f6de0a13993-8b2999f7c9b2d6e3801c",
           "file": "autoExercisePOM_2.spec.ts",
           "line": 26,
           "column": 5
@@ -131,11 +166,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-08-31T12:06:01.036Z",
-    "duration": 15287.05,
-    "expected": 1,
+    "startTime": "2024-08-31T17:47:27.881Z",
+    "duration": 26470.173000000003,
+    "expected": 0,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }
