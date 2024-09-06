@@ -50,8 +50,8 @@ jobs:
     # Serveur HTTP pour afficher le rapport Allure
     - name: Serve Allure Report
       run: |
-        npx http-server allure-report -p 8080 &
-        sleep 60 # Garde le serveur actif pendant 60 secondes
+        npm install -g live-server
+        live-server allure-report --port=8080
   
     - uses: actions/upload-artifact@v4
       if: always()
