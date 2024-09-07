@@ -47,18 +47,10 @@ jobs:
       uses: 8398a7/action-slack@v3
       with:
         status: ${{ job.status }}
-        fields: repo,commit,author,action,eventName,ref,workflow,job,took
+        fields: repo,author,eventName,workflow,job,took
         custom_payload: |
           {
-            "blocks": [
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": ":white_check_mark: *Playwright Tests completed*\nCheck the Allure report: <https://fndiaye2015.github.io/playwright-demo/|Allure Report>"
-                }
-              }
-            ]
+            "text": "Playwright Tests completed. Check the Allure report: <https://fndiaye2015.github.io/playwright-demo/|Allure Report>"
           }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
