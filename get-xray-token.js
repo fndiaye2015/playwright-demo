@@ -22,4 +22,7 @@ async function getXrayToken() {
 getXrayToken().then((token) => {
   console.log(`::add-mask::${token}`); // Masquer le token dans les logs GitHub Actions
   console.log(`XRAY_API_TOKEN=${token}`); // Imprimer le token pour l'utiliser dans les étapes suivantes
+
+  process.env.XRAY_API_TOKEN = token;
+
 });
