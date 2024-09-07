@@ -50,7 +50,10 @@ jobs:
         fields: repo,author,eventName,workflow,job,took
         custom_payload: |
           {
-            "text": "Playwright Tests completed. Check the Allure report: <https://fndiaye2015.github.io/playwright-demo/|Allure Report>"
+            attachments: [{
+              color: '${{ job.status }}' === 'success' ? 'good' : '${{ job.status }}' === 'failure' ? 'danger' : 'warning',
+              "text": "Playwright Tests completed. Check the Allure report: <https://fndiaye2015.github.io/playwright-demo/|Allure Report>"
+            }]
           }
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
