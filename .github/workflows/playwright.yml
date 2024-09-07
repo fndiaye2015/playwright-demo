@@ -46,7 +46,7 @@ jobs:
     - name: Send Slack Notification
       uses: 8398a7/action-slack@v3
       with:
-        status: ${{ job.status }}
+        status: custom
         fields: repo,author,eventName,workflow,job,took
         custom_payload: |
           {
