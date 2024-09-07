@@ -17,7 +17,17 @@ jobs:
     # Installation des dépendances
     - name: Install dependencies
       run: npm ci
+    
+    - name: Retrieve Xray Token
+      id: get-xray-token
+      run: node get-xray-token.js
+      env:
+        XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}
+        XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}
 
+    - name: Set XRAY_API_TOKEN environment variable
+      run: echo "XRAY_API_TOKEN=${{ steps.get-xray-token.outputs.XRAY_API_TOKEN }}" >> $GITHUB_ENV
+    
     # Installation des navigateurs
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps chromium
@@ -25,6 +35,14 @@ jobs:
     # Lancement des tests que sur chrome  
     - name: Run Playwright tests 
       run: npx playwright test tests/autoExercisePOM_2.spec.ts --project chromium --reporter=line,allure-playwright
+    
+    - name: Transform report for Xray
+      run: node transform-report.js
+
+    - name: Send results to Xray
+      run: node send-results.js
+      env:
+        XRAY_API_TOKEN: ${{ env.XRAY_API_TOKEN }}  # Utiliser le token dans l'étape d'envoi des résultats
     
     # Génération du rapport Allure
     - name: Generate Allure Report
