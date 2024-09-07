@@ -26,7 +26,9 @@ jobs:
         XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}
 
     - name: Set XRAY_API_TOKEN environment variable
-      run: echo "XRAY_API_TOKEN=${{ steps.get-xray-token.outputs.XRAY_API_TOKEN }}" >> $GITHUB_ENV
+      run: |
+        echo "XRAY_API_TOKEN=${{ steps.get-xray-token.outputs.XRAY_API_TOKEN }}" >> $GITHUB_ENV
+        echo ${{ env.XRAY_API_TOKEN }}
     
     # Installation des navigateurs
     - name: Install Playwright Browsers
