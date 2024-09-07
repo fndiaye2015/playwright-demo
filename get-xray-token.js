@@ -12,7 +12,10 @@ async function getXrayToken() {
         client_secret: clientSecret,
       }
     );
-    return response.data; // Le token est renvoyé en tant que chaîne
+    const token = response.data;
+    console.log(`XRAY_TOKEN: ${token}`); // Debug : Affichez le token pour vérifier
+
+    return token; // Retourne le token
   } catch (error) {
     console.error("Failed to get Xray token:", error);
     process.exit(1);
@@ -20,9 +23,5 @@ async function getXrayToken() {
 }
 
 getXrayToken().then((token) => {
-  console.log(`::add-mask::${token}`); // Masquer le token dans les logs GitHub Actions
-  console.log(`XRAY_API_TOKEN=${token}`); // Imprimer le token pour l'utiliser dans les étapes suivantes
-
-  process.env.XRAY_API_TOKEN = token;
-
+  console.log(`::set-output name=XRAY_API_TOKEN::${token}`); // Définit l'output pour GitHub Actions
 });
