@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 4
     },
     "preserveOutput": "always",
     "reporter": [
@@ -93,6 +93,46 @@
       "line": 0,
       "specs": [
         {
+          "title": "@KAN-6 TC01 - Register User",
+          "ok": true,
+          "tags": [
+            "KAN-6"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 29302,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-09-07T14:49:01.519Z",
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/fndiaye/Documents/Playwright/functions/test-results/autoExercisePOM_2--KAN-6-TC01---Register-User-chromium/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "158a5b400f6de0a13993-a3569423c813c9493459",
+          "file": "autoExercisePOM_2.spec.ts",
+          "line": 10,
+          "column": 5
+        },
+        {
           "title": "@KAN-1 TC02 - Login User with correct email and password",
           "ok": true,
           "tags": [
@@ -107,14 +147,14 @@
               "projectName": "chromium",
               "results": [
                 {
-                  "workerIndex": 0,
+                  "workerIndex": 1,
                   "status": "passed",
-                  "duration": 5994,
+                  "duration": 20191,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-09-06T08:44:11.735Z",
+                  "startTime": "2024-09-07T14:49:01.507Z",
                   "attachments": [
                     {
                       "name": "trace",
@@ -131,15 +171,95 @@
           "file": "autoExercisePOM_2.spec.ts",
           "line": 26,
           "column": 5
+        },
+        {
+          "title": "@KAN-5 TC03 - Login User with incorrect email and password",
+          "ok": true,
+          "tags": [
+            "KAN-5"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "passed",
+                  "duration": 20356,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-09-07T14:49:01.537Z",
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/fndiaye/Documents/Playwright/functions/test-results/autoExercisePOM_2--KAN-5-T-fbbe1-ncorrect-email-and-password-chromium/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "158a5b400f6de0a13993-071c37e5a2b938235f23",
+          "file": "autoExercisePOM_2.spec.ts",
+          "line": 34,
+          "column": 5
+        },
+        {
+          "title": "@KAN-7 TC04 - Logout User",
+          "ok": true,
+          "tags": [
+            "KAN-7"
+          ],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "status": "passed",
+                  "duration": 22982,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-09-07T14:49:01.520Z",
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/fndiaye/Documents/Playwright/functions/test-results/autoExercisePOM_2--KAN-7-TC04---Logout-User-chromium/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "158a5b400f6de0a13993-4d516aee7b3b17d05d94",
+          "file": "autoExercisePOM_2.spec.ts",
+          "line": 42,
+          "column": 5
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-09-06T08:44:07.707Z",
-    "duration": 10973.661,
-    "expected": 1,
+    "startTime": "2024-09-07T14:48:50.574Z",
+    "duration": 42193.93,
+    "expected": 4,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
