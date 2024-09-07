@@ -6,7 +6,7 @@ async function getXrayToken() {
 
   try {
     const response = await axios.post(
-      "https://xray.cloud.xpand-it.com/api/v1/authenticate",
+      "https://xray.cloud.getxray.app/api/v2/authenticate",
       {
         client_id: clientId,
         client_secret: clientSecret,
