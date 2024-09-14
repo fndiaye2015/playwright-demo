@@ -1,4 +1,5 @@
 const axios = require("axios");
+require("dotenv").config(); 
 
 async function getXrayToken() {
   const clientId = process.env.XRAY_CLIENT_ID;

@@ -109,12 +109,12 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 29302,
+                  "duration": 23518,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-09-07T14:49:01.519Z",
+                  "startTime": "2024-09-14T13:51:41.447Z",
                   "attachments": [
                     {
                       "name": "trace",
@@ -149,12 +149,12 @@
                 {
                   "workerIndex": 1,
                   "status": "passed",
-                  "duration": 20191,
+                  "duration": 18014,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-09-07T14:49:01.507Z",
+                  "startTime": "2024-09-14T13:51:41.424Z",
                   "attachments": [
                     {
                       "name": "trace",
@@ -189,12 +189,12 @@
                 {
                   "workerIndex": 2,
                   "status": "passed",
-                  "duration": 20356,
+                  "duration": 15472,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-09-07T14:49:01.537Z",
+                  "startTime": "2024-09-14T13:51:41.460Z",
                   "attachments": [
                     {
                       "name": "trace",
@@ -229,12 +229,12 @@
                 {
                   "workerIndex": 3,
                   "status": "passed",
-                  "duration": 22982,
+                  "duration": 17089,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-09-07T14:49:01.520Z",
+                  "startTime": "2024-09-14T13:51:41.593Z",
                   "attachments": [
                     {
                       "name": "trace",
@@ -257,8 +257,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-09-07T14:48:50.574Z",
-    "duration": 42193.93,
+    "startTime": "2024-09-14T13:51:36.993Z",
+    "duration": 29903.012,
     "expected": 4,
     "skipped": 0,
     "unexpected": 0,

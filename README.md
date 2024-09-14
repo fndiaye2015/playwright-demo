@@ -260,4 +260,3 @@ export class TodoPage {
     await this.page.click(`button[data-todo="${todo}"]`);
   }
 }
-``
