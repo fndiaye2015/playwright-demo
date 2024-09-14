@@ -17,13 +17,6 @@ jobs:
     # Installation des dépendances
     - name: Install dependencies
       run: npm ci
-    
-    - name: Retrieve Xray Token
-      id: get-xray-token
-      run: node get-xray-token.js
-      env:
-        XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}
-        XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}
 
     #- name: Set XRAY_API_TOKEN environment variable
     #  run: echo "XRAY_API_TOKEN=${{ steps.get-xray-token.outputs.XRAY_API_TOKEN }}" >> $GITHUB_ENV
@@ -39,10 +32,11 @@ jobs:
     - name: Transform report for Xray
       run: node transform-report.js
 
-    - name: Send results to Xray
+    - name: Connect and Send results to Xray
       run: node xray-send-results.js
       env:
-        XRAY_API_TOKEN: ${{ env.XRAY_API_TOKEN }}  # Utiliser le token dans l'étape d'envoi des résultats
+        XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}
+        XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}
     
     # Génération du rapport Allure
     - name: Generate Allure Report
